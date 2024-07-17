@@ -15,10 +15,14 @@
         Indicator,
         Modal,
         Card,
-        Input, Label, Helper, Checkbox, A
+        Input,
+        Label,
+        Helper,
+        Checkbox,
+        A,
     } from "flowbite-svelte";
     import PrimaryButton from "../lib/components/PrimaryButton.svelte";
-    import SecondaryButton from "$lib/components/SecondaryButton.svelte";
+    import StatisticCard from "$lib/components/StatisticCard.svelte";
     import {
         FileOutline,
         FolderOutline,
@@ -48,20 +52,20 @@
 </script>
 
 <Navbar
-    class="px-12 sm:px-48 py-5 fixed w-full z-20 top-0 start-0 border-b bg-[#47277D] text-white"
+    class="px-8 py-5 fixed w-full z-20 top-0 start-0 shadow-[0_0_38px_rgba(108,82,151,0.4)] bg-[#47277D] text-white"
 >
-    <NavBrand href="/">
+    <NavBrand>
         <span
-            class="self-center whitespace-nowrap text-xl font-semibold dark:text-white"
-            >Silbernetz+ | Matching-System</span
+            class="self-center whitespace-nowrap text-xl font-bold dark:text-white"
+            >Silbernetz+ <span class="font-light">| Matching-System</span></span
         >
     </NavBrand>
     <NavHamburger class="hover:bg-[#321C59]" />
-    <NavUl class="bg-[#47277D] hover:text-[#321C59]">
+    <NavUl>
         <NavLi
-            class="bg-[#47277D] text-white hover:bg-[#321C59]"
+            class="bg-[#47277D] text-white hover:bg-[#321C59] flex justify-center"
             href="/"
-            active={true}>Abmelden</NavLi
+            active={true}><UserOutline class="w-5 h-5 me-2" />Abmelden</NavLi
         >
         <!-- <NavLi href="/about">About</NavLi>
         <NavLi href="/docs/components/navbar">Navbar</NavLi>
@@ -70,7 +74,7 @@
     </NavUl>
 </Navbar>
 
-<div class="relative px-12 xs:px-20 sm:px-48">
+<div class="container mx-auto px-8 md:px-0">
     <!-- <div class="overflow-scroll pb-12">
         <p class=""></p>
     </div> -->
@@ -79,7 +83,7 @@
     >
         Guten Tag,<br />{userName}
     </h1>
-    <div class="flex justify-end mb-6">
+    <div class="grid mb-4 md:flex md:justify-end md:mb-6">
         <Button
             on:click={() => (clickOutsideModal = true)}
             size="md"
@@ -95,11 +99,11 @@
     <SecondaryButton text="Unbehandelte Aufnahme"></SecondaryButton>
     <SecondaryButton text="Verlauf"></SecondaryButton> -->
 
-    <div class="flex-warp mb-6">
+    <div class="grid grid-clos-3 gap-4 md:flex md:flex-wrap mb-6">
         <Button
             size="sm"
             href=""
-            class="mr-4 mb-2 relative bg-[#F8F8F9] text-lg text-[#47277D] font-semibold hover:bg-[#F8F8F9] hover:shadow-[0_0_10px_#6C5297] border-2 border-[#846EA8]"
+            class=" relative bg-[#F8F8F9] text-lg text-[#47277D] font-semibold hover:bg-[#F8F8F9] hover:shadow-[0_0_10px_#6C5297] border-2 border-[#846EA8]"
         >
             <UserOutline class="w-6 h-6 me-2" />Person ansehen
         </Button>
@@ -107,7 +111,7 @@
         <Button
             size="sm"
             href=""
-            class="mr-4 mb-2 relative bg-[#F8F8F9] text-lg text-[#47277D] font-semibold hover:bg-[#F8F8F9] hover:shadow-[0_0_10px_#6C5297] border-2 border-[#846EA8]"
+            class="relative bg-[#F8F8F9] text-lg text-[#47277D] font-semibold hover:bg-[#F8F8F9] hover:shadow-[0_0_10px_#6C5297] border-2 border-[#846EA8]"
         >
             <FolderOutline class="w-6 h-6 me-2" /><Indicator
                 color="red"
@@ -120,7 +124,7 @@
         <Button
             size="sm"
             href=""
-            class="mb-2 relative bg-[#F8F8F9] text-lg text-[#47277D] font-semibold hover:bg-[#F8F8F9] hover:shadow-[0_0_10px_#6C5297] border-2 border-[#846EA8]"
+            class="relative bg-[#F8F8F9] text-lg text-[#47277D] font-semibold hover:bg-[#F8F8F9] hover:shadow-[0_0_10px_#6C5297] border-2 border-[#846EA8]"
         >
             <ClockOutline class="w-6 h-6 me-2" />Verlauf
         </Button>
@@ -159,26 +163,28 @@
     </TableSearch> -->
 
     <Modal bind:open={clickOutsideModal} autoclose outsideclose>
-        <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.</p>
-        <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.</p>
+        <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+            With less than a month to go before the European Union enacts new
+            consumer privacy laws for its citizens, companies around the world
+            are updating their terms of service agreements to comply.
+        </p>
+        <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+            The European Union’s General Data Protection Regulation (G.D.P.R.)
+            goes into effect on May 25 and is meant to ensure a common set of
+            data rights in the European Union. It requires organizations to
+            notify users as soon as possible of high-risk data breaches that
+            could personally affect them.
+        </p>
         <div class="flex justify-center">
             <Button on:click={() => alert('Handle "success"')}>I accept</Button>
             <Button color="alternative">Decline</Button>
         </div>
-      </Modal>
-      <div class="grid gap-4 grid-cols-3">
-      <Card class="bg-[#FEFCF9] shadow-[0_0_38px_rgba(108,82,151,0.2)] border border-[#C6BCD7]">
-        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
-        <p class="font-normal text-gray-700 dark:text-gray-400 leading-tight">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
-      </Card>
-      <Card class="bg-[#FEFCF9] shadow-[0_0_38px_rgba(108,82,151,0.2)] border border-[#C6BCD7]">
-        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
-        <p class="font-normal text-gray-700 dark:text-gray-400 leading-tight">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
-      </Card>
-      <Card class="bg-[#FEFCF9] shadow-[0_0_38px_rgba(108,82,151,0.2)] border border-[#C6BCD7]">
-        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
-        <p class="font-normal text-gray-700 dark:text-gray-400 leading-tight">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
-      </Card>
-      </div>
+    </Modal>
+    <div class="grid lg:grid-cols-4 gap-4">
+        <StatisticCard />
+        <StatisticCard />
+        <StatisticCard />
+        <StatisticCard />
+        <StatisticCard />
+    </div>
 </div>
-
