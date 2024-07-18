@@ -1,13 +1,14 @@
 <script>
-    import { Button, Modal } from "flowbite-svelte";
-    import StatisticCard from "$lib/components/dashboard/statisticcard.svelte";
-    import Greeting from "$lib/components/dashboard/greeting.svelte";
-    import Buttons from "$lib/components/dashboard/buttons.svelte";
+    import StatisticCard from "$lib/dashboard/statisticcard.svelte";
+    import Greeting from "$lib/dashboard/greeting.svelte";
+    import Buttons from "$lib/dashboard/buttons.svelte";
 </script>
 
 <div class="container mx-auto px-8 md:px-0">
     <Greeting />
     <Buttons />
+    <h3 class="mb-2 text-3xl font- text-black leading-[62px] max-md:mt-2 max-md:max-w-full max-md:text-2xl max-md:leading-[35px]"
+    >Statistiken</h3>
     <div class="grid lg:grid-cols-4 gap-4">
         <StatisticCard />
         <StatisticCard />
