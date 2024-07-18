@@ -1,17 +1,24 @@
 <script>
-    import { Card} from "flowbite-svelte";
+    import { Card } from "flowbite-svelte";
+    import Users from "../icons/Users.svg";
+    let count = 0;
+    let item = "Matches";
 </script>
 
 <Card
-    class="bg-[#FEFCF9] shadow-[0_0_38px_rgba(108,82,151,0.2)] border border-[#C6BCD7]"
+    class="bg-[#FEFCF9] shadow-[0_0_38px_rgba(108,82,151,0.2)] border border-[#C6BCD7] text-center min-w-96 lg:min-w-full"
 >
-    <h5
-        class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+    <p
+        class="mb-4 text-6xl font-bold tracking-tight text-[#47277D] dark:text-white"
     >
-        Noteworthy technology acquisitions 2021
-    </h5>
-    <p class="font-normal text-gray-700 dark:text-gray-400 leading-tight">
-        Here are the biggest enterprise technology acquisitions of 2021 so far,
-        in reverse chronological order.
+        {count}
     </p>
+    <div class="flex flex-col items-center justify-center">
+        <img class="mb-1" src={Users} alt="Users Icon" />
+        <p
+            class="mb-2 text-xl font-normal text-[#846EA8] dark:text-gray-400 leading-tight"
+        >
+            {item}
+        </p>
+    </div>
 </Card>
