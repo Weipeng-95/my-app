@@ -4,7 +4,7 @@
     import Buttons from "$lib/dashboard/buttons.svelte";
 </script>
 
-<div class="container mx-auto px-8 md:px-0">
+<div class="container mt-40 mx-auto px-8 md:px-0">
     <Greeting />
     <Buttons />
     <h3 class="mb-2 text-3xl font-bold text-black leading-[62px] max-md:mt-2 max-md:max-w-full max-md:text-2xl max-md:leading-[35px]"
