@@ -24,7 +24,8 @@
         <NavLi
             class="bg-[#47277D] text-white hover:bg-[#321C59] flex justify-center"
             href="/"
-            active={true}><ArrowRightToBracketOutline class="w-5 h-5 me-2" />Abmelden</NavLi
+            active={true}
+            ><ArrowRightToBracketOutline class="w-5 h-5 me-2" />Abmelden</NavLi
         >
         <!-- <NavLi href="/about">About</NavLi>
         <NavLi href="/docs/components/navbar">Navbar</NavLi>
@@ -33,4 +34,7 @@
     </NavUl>
 </Navbar>
 
-<slot></slot>
+<div class="container mt-32 mx-auto px-8 md:px-0">
+    <slot></slot>
+</div>
+<div class="container mt-16" />

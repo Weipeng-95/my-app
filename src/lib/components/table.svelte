@@ -6,7 +6,6 @@
         TableBody,
         TableBodyRow,
         TableBodyCell,
-        Table,
     } from "flowbite-svelte";
     let searchTerm = "";
     let items = [
@@ -128,7 +127,7 @@
             item.name.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1,
     );
 </script>
-<Table>
+
 <TableSearch
     tableBodyClass="bg-black"
     classInput="mb-6 border-2 border-[#846EA8] focus:border-[#47277D] focus:ring-transparent hover:shadow-[0_0_10px_#6C5297] focus:shadow-[0_0_10px_#6C5297]"
@@ -137,18 +136,20 @@
     hoverable={true}
     bind:inputValue={searchTerm}
 >
-    <TableHead >
-        <TableHeadCell class="bg-primary-50 sticky top-0">Name</TableHeadCell>
-        <TableHeadCell class="bg-primary-50 sticky top-0">Typ</TableHeadCell>
-        <TableHeadCell class="bg-primary-50 sticky top-0">Geschlecht</TableHeadCell>
-        <TableHeadCell class="bg-primary-50 sticky top-0">Alter</TableHeadCell>
-        <TableHeadCell class="bg-primary-50 sticky top-0">Status</TableHeadCell>
-        <TableHeadCell class="bg-primary-50 sticky top-0">Telefonnr.</TableHeadCell>
-        <TableHeadCell class="bg-primary-50 sticky top-0 right-0 shadow-md">Aktion</TableHeadCell>
+    <TableHead>
+        <TableHeadCell class="bg-primary-50">Name</TableHeadCell>
+        <TableHeadCell class="bg-primary-50">Typ</TableHeadCell>
+        <TableHeadCell class="bg-primary-50">Geschlecht</TableHeadCell>
+        <TableHeadCell class="bg-primary-50">Alter</TableHeadCell>
+        <TableHeadCell class="bg-primary-50">Status</TableHeadCell>
+        <TableHeadCell class="bg-primary-50">Telefonnr.</TableHeadCell>
+        <TableHeadCell class="bg-primary-50 sticky right-0 shadow-md"
+            >Aktion</TableHeadCell
+        >
     </TableHead>
     <TableBody tableBodyClass="divide-y">
         {#each filteredItems as item}
-            <TableBodyRow >
+            <TableBodyRow>
                 <TableBodyCell class="bg-[#FEFCF9]">{item.name}</TableBodyCell>
                 <TableBodyCell class="bg-[#FEFCF9]">{item.type}</TableBodyCell>
                 <TableBodyCell class="bg-[#FEFCF9]">{item.gender}</TableBodyCell
@@ -158,7 +159,6 @@
                 >
                 <TableBodyCell class="bg-[#FEFCF9]">{item.tel}</TableBodyCell>
                 <TableBodyCell class="bg-[#FEFCF9] sticky right-0">
-                    
                     <a
                         href="/persondatabase/detail"
                         class="font-medium text-primary-600 hover:underline dark:text-primary-500"
@@ -169,4 +169,3 @@
         {/each}
     </TableBody>
 </TableSearch>
-</Table>
