@@ -15,8 +15,8 @@
 >
     <NavBrand class="hover:cursor-default">
         <span
-            class="self-center whitespace-nowrap text-xl font-bold dark:text-white"
-            >Silbernetz+ <span class="font-light">| Matching-System</span></span
+            class="self-center whitespace-nowrap text-2xl font-bold dark:text-white"
+            >Silbernetz+ <span class="font-light text-xl">| Matching-System</span></span
         >
     </NavBrand>
     <NavHamburger class="hover:bg-[#321C59]" />

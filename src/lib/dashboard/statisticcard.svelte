@@ -14,7 +14,7 @@
         {count}
     </p>
     <div class="flex flex-col items-center justify-center">
-        <img class="mb-1" src={Users} alt="Users Icon" />
+        <img class="mb-1" src={Users}  alt="Users Icon" />
         <p
             class="mb-2 text-xl font-normal text-[#846EA8] dark:text-gray-400 leading-tight"
         >
