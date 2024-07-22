@@ -61,7 +61,7 @@
 
 <Modal bind:open={clickOutsideModal} autoclose outsideclose>
     <div class="flex justify-center">
-        <Button on:click={openForm}>SNF</Button>
+        <Button class="mr-4" on:click={openForm}>SNF</Button>
         <Button on:click={openForm}>ALT</Button>
     </div>
 </Modal>
