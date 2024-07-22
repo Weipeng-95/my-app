@@ -1,12 +1,14 @@
 <script>
-  import Form from "$lib/components/form.svelte";
-    import { Button, Indicator, Modal } from "flowbite-svelte";
+    import Form from "$lib/components/FirstContactForm.svelte";
+    import { Button, Card, Indicator, Modal } from "flowbite-svelte";
     import {
         FileOutline,
         FolderOutline,
         UserOutline,
         ClockOutline,
     } from "flowbite-svelte-icons";
+    import snf_icon from "../icons/SNF_Icon.svg";
+    import senior_icon from "../icons/Senior_Icon.svg";
     let showForm = false;
     let clickOutsideModal = false;
     let indicatorCount = 1;
@@ -60,9 +62,20 @@
 </div>
 
 <Modal bind:open={clickOutsideModal} autoclose outsideclose>
+    <h1
+    class="mb-8 text-5xl font-black text-black leading-[62px] max-md:mt-28 max-md:max-w-full max-md:text-4xl max-md:leading-[35px] flex justify-center"
+    >
+    Erste Aufnahme
+    </h1> 
+    <h2> Bitte wählen Sie die Art der Person aus, um Informationen schnell zu aufnehmen.</h2>
     <div class="flex justify-center">
-        <Button class="mr-4" on:click={openForm}>SNF</Button>
-        <Button on:click={openForm}>ALT</Button>
+        <Button size="xl" 
+         class="mr-4 relative bg-[#F8F8F9] text-lg text-[#47277D] font-semibold hover:bg-[#F8F8F9] hover:shadow-[0_0_10px_#6C5297] border-2 border-[#846EA8]" on:click={openForm}>
+            <img src={senior_icon} class="w-6 h-6 me-2" alt="Icon Description" />
+        </Button>
+        <Button size="xl" class="mr-4 relative bg-[#F8F8F9] text-lg text-[#47277D] font-semibold hover:bg-[#F8F8F9] hover:shadow-[0_0_10px_#6C5297] border-2 border-[#846EA8]" on:click={openForm}>
+            <img src={snf_icon} class="w-6 h-6 me-2" alt="Icon Description" />
+        </Button>
     </div>
 </Modal>
 
