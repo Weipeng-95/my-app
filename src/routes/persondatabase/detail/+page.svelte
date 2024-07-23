@@ -1,5 +1,5 @@
 <!-- TODO:
- for und id für Input verbinden
+ for und id für Input verbinden -- fertig
  Möglcihe Code optimieren(Reuse)
   -->
 <script>
@@ -186,8 +186,9 @@
                     />
                 </Label>
                 <div>
-                    <Label class="text-md font-semibold">Name</Label>
+                    <Label class="text-md font-semibold" for="name">Name</Label>
                     <Input
+                        id="name"
                         class="mt-1 bg-secondary-50 font-normal border-2 border-[#846EA8] focus:border-[#47277D] focus:ring-transparent hover:shadow-[0_0_10px_#6C5297] focus:shadow-[0_0_10px_#6C5297]"
                         type="text"
                         bind:value={person.name}
@@ -205,8 +206,9 @@
                     />
                 </Label>
                 <div>
-                    <Label class="text-md font-semibold">Alter</Label>
+                    <Label class="text-md font-semibold" for="age">Alter</Label>
                     <Input
+                        id="age"
                         class="mt-1 bg-secondary-50 font-normal border-2 border-[#846EA8] focus:border-[#47277D] focus:ring-transparent hover:shadow-[0_0_10px_#6C5297] focus:shadow-[0_0_10px_#6C5297]"
                         type="number"
                         bind:value={person.age}
@@ -224,8 +226,11 @@
                     />
                 </Label>
                 <div>
-                    <Label class="text-md font-semibold">Anschrift</Label>
+                    <Label class="text-md font-semibold" for="address"
+                        >Anschrift</Label
+                    >
                     <Input
+                        id="address"
                         class="mt-1 bg-secondary-50 font-normal border-2 border-[#846EA8] focus:border-[#47277D] focus:ring-transparent hover:shadow-[0_0_10px_#6C5297] focus:shadow-[0_0_10px_#6C5297]"
                         type="text"
                         bind:value={person.address}
@@ -243,8 +248,11 @@
                     />
                 </Label>
                 <div>
-                    <Label class="text-md font-semibold">Einrichtung</Label>
+                    <Label class="text-md font-semibold" for="facility"
+                        >Einrichtung</Label
+                    >
                     <Input
+                        id="facility"
                         class="mt-1 bg-secondary-50 font-normal border-2 border-[#846EA8] focus:border-[#47277D] focus:ring-transparent hover:shadow-[0_0_10px_#6C5297] focus:shadow-[0_0_10px_#6C5297]"
                         type="text"
                         bind:value={person.facility}
@@ -254,16 +262,22 @@
 
             <div class="grid gap-3 md:grid-cols-2 md:gap-6 mb-3">
                 <div>
-                    <Label class="text-md font-semibold">Festnetz</Label>
+                    <Label class="text-md font-semibold" for="tel"
+                        >Festnetz</Label
+                    >
                     <Input
+                        id="tel"
                         class="mt-1 bg-secondary-50 font-normal border-2 border-[#846EA8] focus:border-[#47277D] focus:ring-transparent hover:shadow-[0_0_10px_#6C5297] focus:shadow-[0_0_10px_#6C5297]"
                         type="text"
                         bind:value={person.tel}
                     />
                 </div>
                 <div>
-                    <Label class="text-md font-semibold">Mobil</Label>
+                    <Label class="text-md font-semibold" for="mobile"
+                        >Mobil</Label
+                    >
                     <Input
+                        id="mobile"
                         class="mt-1 bg-secondary-50 font-normal border-2 border-[#846EA8] focus:border-[#47277D] focus:ring-transparent hover:shadow-[0_0_10px_#6C5297] focus:shadow-[0_0_10px_#6C5297]"
                         type="text"
                         bind:value={person.mobile}
@@ -341,8 +355,11 @@
                     </Label>
                 </div>
                 <div>
-                    <Label class="text-md font-semibold">Lebnesform</Label>
+                    <Label class="text-md font-semibold" for="living_form"
+                        >Lebnesform</Label
+                    >
                     <Input
+                        id="living_form"
                         class="mt-1 bg-secondary-50 font-normal border-2 border-[#846EA8] focus:border-[#47277D] focus:ring-transparent hover:shadow-[0_0_10px_#6C5297] focus:shadow-[0_0_10px_#6C5297]"
                         type="text"
                         bind:value={person.living_form}
@@ -372,16 +389,22 @@
 
             <div class="grid gap-3 md:grid-cols-2 md:gap-6 mb-3">
                 <div>
-                    <Label class="text-md font-semibold">Dialekt</Label>
+                    <Label class="text-md font-semibold" fopr="dialect"
+                        >Dialekt</Label
+                    >
                     <Input
+                        id="dialect"
                         class="mt-1 bg-secondary-50 font-normal border-2 border-[#846EA8] focus:border-[#47277D] focus:ring-transparent hover:shadow-[0_0_10px_#6C5297] focus:shadow-[0_0_10px_#6C5297]"
                         type="text"
                         bind:value={person.dialect}
                     />
                 </div>
                 <div>
-                    <Label class="text-md font-semibold">Sprechweise</Label>
+                    <Label class="text-md font-semibold" for="speaking_style"
+                        >Sprechweise</Label
+                    >
                     <Input
+                        id="speaking_style"
                         class="mt-1 bg-secondary-50 font-normal border-2 border-[#846EA8] focus:border-[#47277D] focus:ring-transparent hover:shadow-[0_0_10px_#6C5297] focus:shadow-[0_0_10px_#6C5297]"
                         type="text"
                         bind:value={person.speaking_style}
@@ -391,8 +414,11 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-3">
                 <div>
-                    <Label class="text-md font-semibold">Grundstimmung</Label>
+                    <Label class="text-md font-semibold" for="general_mood"
+                        >Grundstimmung</Label
+                    >
                     <Input
+                        id="general_mood"
                         class="mt-1 bg-secondary-50 font-normal border-2 border-[#846EA8] focus:border-[#47277D] focus:ring-transparent hover:shadow-[0_0_10px_#6C5297] focus:shadow-[0_0_10px_#6C5297]"
                         type="text"
                         bind:value={person.general_mood}
@@ -469,16 +495,20 @@
         <div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-3">
                 <div>
-                    <Label class="text-md font-semibold">ID</Label>
+                    <Label class="text-md font-semibold" for="id">ID</Label>
                     <Input
+                        id="id"
                         class="mt-1 bg-secondary-50 font-normal border-2 border-[#846EA8] focus:border-[#47277D] focus:ring-transparent hover:shadow-[0_0_10px_#6C5297] focus:shadow-[0_0_10px_#6C5297]"
                         type="text"
                         bind:value={person.id}
                     />
                 </div>
                 <div>
-                    <Label class="text-md font-semibold">Status</Label>
+                    <Label class="text-md font-semibold" for="status"
+                        >Status</Label
+                    >
                     <Input
+                        id="status"
                         class="mt-1 bg-secondary-50 font-normal border-2 border-[#846EA8] focus:border-[#47277D] focus:ring-transparent hover:shadow-[0_0_10px_#6C5297] focus:shadow-[0_0_10px_#6C5297]"
                         type="text"
                         bind:value={person.status}
@@ -488,16 +518,20 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-3">
                 <div>
-                    <Label class="text-md font-semibold">Stammnr.</Label>
+                    <Label class="text-md font-semibold" for="stammnr"
+                        >Stammnr.</Label
+                    >
                     <Input
+                        id="stammnr"
                         class="mt-1 bg-secondary-50 font-normal border-2 border-[#846EA8] focus:border-[#47277D] focus:ring-transparent hover:shadow-[0_0_10px_#6C5297] focus:shadow-[0_0_10px_#6C5297]"
                         type="text"
                         bind:value={person.stammnr}
                     />
                 </div>
                 <div>
-                    <Label class="text-md font-semibold">DDI</Label>
+                    <Label class="text-md font-semibold" for="ddi">DDI</Label>
                     <Input
+                        id="ddi"
                         class="mt-1 bg-secondary-50 font-normal border-2 border-[#846EA8] focus:border-[#47277D] focus:ring-transparent hover:shadow-[0_0_10px_#6C5297] focus:shadow-[0_0_10px_#6C5297]"
                         type="number"
                         bind:value={person.ddi}
@@ -507,16 +541,22 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-3">
                 <div>
-                    <Label class="text-md font-semibold">Zugangsdatum</Label>
+                    <Label class="text-md font-semibold" for="entry_date"
+                        >Zugangsdatum</Label
+                    >
                     <Input
+                        id="entry_date"
                         class="mt-1 bg-secondary-50 font-normal border-2 border-[#846EA8] focus:border-[#47277D] focus:ring-transparent hover:shadow-[0_0_10px_#6C5297] focus:shadow-[0_0_10px_#6C5297]"
                         type="text"
                         bind:value={person.entry_date}
                     />
                 </div>
                 <div>
-                    <Label class="text-md font-semibold">Abgangsdatum</Label>
+                    <Label class="text-md font-semibold" for="cancellation_date"
+                        >Abgangsdatum</Label
+                    >
                     <Input
+                        id="cancellation_date"
                         class="mt-1 bg-secondary-50 font-normal border-2 border-[#846EA8] focus:border-[#47277D] focus:ring-transparent hover:shadow-[0_0_10px_#6C5297] focus:shadow-[0_0_10px_#6C5297]"
                         type="text"
                         bind:value={person.cancellation_date}
@@ -526,16 +566,22 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-3">
                 <div>
-                    <Label class="text-md font-semibold">Matchings</Label>
+                    <Label class="text-md font-semibold" for="matchings"
+                        >Matchings</Label
+                    >
                     <Input
+                        id="matchings"
                         class="mt-1 bg-secondary-50 font-normal border-2 border-[#846EA8] focus:border-[#47277D] focus:ring-transparent hover:shadow-[0_0_10px_#6C5297] focus:shadow-[0_0_10px_#6C5297]"
                         type="text"
                         bind:value={person.matchings}
                     />
                 </div>
                 <div>
-                    <Label class="text-md font-semibold">Letzte Änderung</Label>
+                    <Label class="text-md font-semibold" for="last_change"
+                        >Letzte Änderung</Label
+                    >
                     <Input
+                        id="last_change"
                         class="mt-1 bg-secondary-50 font-normal border-2 border-[#846EA8] focus:border-[#47277D] focus:ring-transparent hover:shadow-[0_0_10px_#6C5297] focus:shadow-[0_0_10px_#6C5297]"
                         type="text"
                         bind:value={person.last_change}
@@ -545,8 +591,11 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-3">
                 <div>
-                    <Label class="text-md font-semibold">Bearbeiter/-in</Label>
+                    <Label class="text-md font-semibold" for="operator"
+                        >Bearbeiter/-in</Label
+                    >
                     <Input
+                        id="operator"
                         class="mt-1 bg-secondary-50 font-normal border-2 border-[#846EA8] focus:border-[#47277D] focus:ring-transparent hover:shadow-[0_0_10px_#6C5297] focus:shadow-[0_0_10px_#6C5297]"
                         type="text"
                         bind:value={person.operator}
@@ -555,8 +604,11 @@
             </div>
             <div class="grid grid-cols-1 gap-6 mb-3">
                 <div>
-                    <Label class="text-md font-semibold">Notizen</Label>
+                    <Label class="text-md font-semibold" for="notes"
+                        >Notizen</Label
+                    >
                     <Textarea
+                        id="notes"
                         class="mt-1 bg-secondary-50 font-normal border-2 border-[#846EA8] focus:border-[#47277D] focus:ring-transparent hover:shadow-[0_0_10px_#6C5297] focus:shadow-[0_0_10px_#6C5297]"
                         placeholder="Hier die Notizen für die Person..."
                         rows="4"
