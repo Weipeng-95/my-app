@@ -1,5 +1,5 @@
 <!-- TODO:
- for und id für Input verbinden -- fertig
+ for und id für Input verbinden -> fertig
  Möglcihe Code optimieren(Reuse)
   -->
 <script>
