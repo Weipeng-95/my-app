@@ -607,13 +607,13 @@
                     <Label class="text-md font-semibold" for="notes"
                         >Notizen</Label
                     >
-                    <Textarea
+                    <textarea
+                        bind:value={person.notes}
                         id="notes"
-                        class="mt-1 bg-secondary-50 font-normal border-2 border-[#846EA8] focus:border-[#47277D] focus:ring-transparent hover:shadow-[0_0_10px_#6C5297] focus:shadow-[0_0_10px_#6C5297]"
+                        class="w-full mt-1 text-gray-900 p-2.5 text-sm bg-secondary-50 font-normal border-2 rounded-md border-[#846EA8] focus:border-[#47277D] focus:ring-transparent hover:shadow-[0_0_10px_#6C5297] focus:shadow-[0_0_10px_#6C5297]"
                         placeholder="Hier die Notizen für die Person..."
                         rows="4"
-                        bind:value={person.notes}
-                    />
+                    ></textarea>
                 </div>
             </div>
         </div>

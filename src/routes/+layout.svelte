@@ -11,18 +11,20 @@
 </script>
 
 <Navbar
-    class="px-8 py-5 fixed w-full z-20 top-0 start-0 shadow-[0_0_38px_rgba(108,82,151,0.4)] bg-[#47277D] text-white"
+    class="px-8 py-5 md:py-3 fixed w-full z-20 top-0 start-0 shadow-[0_0_38px_rgba(108,82,151,0.4)] bg-[#47277D] text-white"
 >
     <NavBrand class="hover:cursor-default">
         <span
             class="self-center whitespace-nowrap text-2xl font-bold dark:text-white"
-            >Silbernetz+ <span class="font-light text-xl">| Matching-System</span></span
+            >Silbernetz+ <span class="font-light text-xl"
+                >| Matching-System</span
+            ></span
         >
     </NavBrand>
     <NavHamburger class="hover:bg-[#321C59]" />
     <NavUl>
         <NavLi
-            class="bg-[#47277D] text-white hover:bg-[#321C59] flex justify-center"
+            class="bg-[#47277D] text-white hover:bg-[#321C59] md:p-3 md:rounded-lg md:hover:bg-[#321C59] md:hover:text-white flex justify-center"
             href="/"
             active={true}
             ><ArrowRightToBracketOutline class="w-5 h-5 me-2" />Abmelden</NavLi
