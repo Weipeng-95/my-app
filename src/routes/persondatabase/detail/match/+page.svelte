@@ -55,76 +55,6 @@
         notes: "Lorem ipsum dolor sit amet, error virtute vix eu, falli timeam vulputate at per. Diceret accusam scriptorem sea ne, mel ad nihil causae. Facer quidam feugait nam in, ut mel congue definiebas, tota animal fabellas",
     };
 
-    let isEditing = false;
-    function toggleEditMode() {
-        isEditing = !isEditing;
-    }
-
-    let selected = "";
-    let title = [
-        { value: "Frau", name: "Frau" },
-        { value: "Herr", name: "Herr" },
-    ];
-    let type = [
-        { value: "Senior", name: "Senior" },
-        { value: "SNF", name: "SNF" },
-    ];
-    let gender = [
-        { value: "Weblich", name: "Weblich" },
-        { value: "Männlich", name: "Männlich" },
-        { value: "Divers", name: "Divers" },
-    ];
-    let state = [
-        { value: "Baden-Württemberg", name: "Baden-Württemberg" },
-        { value: "Bayern", name: "Bayern" },
-        { value: "Berlin", name: "Berlin" },
-        { value: "Brandenburg", name: "Brandenburg" },
-        { value: "Bremen", name: "Bremen" },
-        { value: "Hamburg", name: "Hamburg" },
-        { value: "Hessen", name: "Hessen" },
-        { value: "Mecklenburg-Vorpommern", name: "Mecklenburg-Vorpommern" },
-        { value: "Niedersachsen", name: "Niedersachsen" },
-        { value: "Nordrhein-Westfalen", name: "Nordrhein-Westfalen" },
-        { value: "Rheinland-Pfalz", name: "Rheinland-Pfalz" },
-        { value: "Saarland", name: "Saarland" },
-        { value: "Sachsen", name: "Sachsen" },
-        { value: "Sachsen-Anhalt", name: "Sachsen-Anhalt" },
-        { value: "Schleswig-Holstein", name: "Schleswig-Holstein" },
-        { value: "Thüringen", name: "Thüringen" },
-    ];
-    let times_a_week = [
-        { value: "1 Mal pro Woche", name: "1 Mal pro Woche" },
-        { value: "2 Mal pro Woche", name: "2 Mal pro Woche" },
-        { value: "3 Mal pro Woche", name: "3 Mal pro Woche" },
-        { value: "Mehr als 3 Mal pro Woche", name: "Mehr als 3 Mal pro Woche" },
-    ];
-    let daytime = [
-        { value: "morgens", name: "morgens" },
-        { value: "vormittags", name: "vormittags" },
-        { value: "mittags", name: "mittags" },
-        { value: "nachmittags", name: "nachmittags" },
-        { value: "abends", name: "abends" },
-        { value: "nachts", name: "nachts" },
-    ];
-    let interest = [
-        { value: "Lesen", name: "Lesen" },
-        { value: "Musik", name: "Musik" },
-        { value: "Fernsehen", name: "Fernsehen" },
-        { value: "Spaziergang", name: "Spaziergang" },
-        { value: "Kanu", name: "Kanu" },
-        { value: "Fußball", name: "Fußball" },
-    ];
-    let pet = [
-        { value: "Hund", name: "Hund" },
-        { value: "Katze", name: "Katze" },
-        { value: "Vogel", name: "Vogel" },
-        { value: "Kaninchen", name: "Kaninchen" },
-        { value: "Meerschweinchen", name: "Meerschweinchen" },
-        { value: "Schlange", name: "Schlange" },
-    ];
-    let selected_interest = [];
-    let selected_pet = [];
-
     let isSearchMatch = false;
 </script>
 
@@ -132,7 +62,8 @@
 <Breadcrumb aria-label="Default breadcrumb example">
     <BreadcrumbItem href="/" home>Dashboard</BreadcrumbItem>
     <BreadcrumbItem href="/persondatabase">Personendatenbank</BreadcrumbItem>
-    <BreadcrumbItem>Ansehen</BreadcrumbItem>
+    <BreadcrumbItem href="/detail">Ansehen</BreadcrumbItem>
+    <BreadcrumbItem>Match</BreadcrumbItem>
 </Breadcrumb>
 <!-- Site Title -->
 <h1
@@ -141,49 +72,16 @@
     Personendaten ansehen
 </h1>
 <div class="grid gap-4 mb-12 md:flex md:justify-end sticky top-32">
-    {#if !isEditing}
-        {#if !isSearchMatch}<Button
-                on:click={() => {
-                    isSearchMatch = !isSearchMatch;
-                }}
-                size="xs"
-                href=""
-                class="bg-[#47277D] text-md font-semibold hover:bg-[#321C59] hover:shadow-[0_0_10px_#6C5297]"
-                ><UsersOutline class="w-6 h-6 me-2" />
-                Match tätigen</Button
-            >
-      
-
-        <Button
-            on:click={toggleEditMode}
-            size="xs"
-            href=""
-            class="bg-[#47277D] text-md font-semibold hover:bg-[#321C59] hover:shadow-[0_0_10px_#6C5297]"
-            ><UserEditOutline class="w-6 h-6 me-2" />
-            Bearbeiten</Button
-        >
-        {:else}
-        <Button
-            on:click={() => {
-                isSearchMatch = !isSearchMatch;
-            }}
-            size="xs"
-            href=""
-            class="bg-[#47277D] text-md font-semibold hover:bg-[#321C59] hover:shadow-[0_0_10px_#6C5297]"
-            ><UserEditOutline class="w-6 h-6 me-2" />
-            Match abbrechen</Button
-        >
-    {/if}
-    {:else}
-        <Button
-            on:click={toggleEditMode}
-            size="xs"
-            href=""
-            class="bg-[#47277D] text-md font-semibold hover:bg-[#321C59] hover:shadow-[0_0_10px_#6C5297]"
-            ><FloppyDiskAltOutline class="w-6 h-6 me-2" />
-            Änderungen speichern</Button
-        >
-    {/if}
+    <Button
+        on:click={() => {
+            isSearchMatch = !isSearchMatch;
+        }}
+        size="xs"
+        href=""
+        class="bg-[#47277D] text-md font-semibold hover:bg-[#321C59] hover:shadow-[0_0_10px_#6C5297]"
+        ><UserEditOutline class="w-6 h-6 me-2" />
+        Match abbrechen</Button
+    >
 </div>
 
 <div class={isSearchMatch ? "grid grid-cols-2 gap-12" : ""}>
