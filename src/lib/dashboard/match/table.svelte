@@ -1,8 +1,144 @@
 <script>
-    import { Button, Breadcrumb, BreadcrumbItem, Badge } from "flowbite-svelte";
-    import { CloseCircleOutline } from "flowbite-svelte-icons";
+    import {
+        TableSearch,
+        TableHead,
+        TableHeadCell,
+        TableBody,
+        TableBodyRow,
+        TableBodyCell,
+        Badge,
+        Button,
+    } from "flowbite-svelte";
+    import {
+        UsersOutline,
+        ChevronLeftOutline
+    } from "flowbite-svelte-icons";
+
     import InfoRow from "$lib/dashboard/inforow.svelte";
-    import Table from "$lib/dashboard/match/table.svelte";
+
+    const toggleViewed = () => {
+        isView = !isView;
+    };
+    let isView = false;
+    let searchTerm = "";
+    let items = [
+        {
+            name: "Toyota",
+            type: "SNF",
+            gender: "männlich",
+            age: 30,
+            status: "Neuzugang",
+            tel: "012343395732",
+        },
+        {
+            name: "Ford",
+            type: "Senior",
+            gender: "männlich",
+            age: 30,
+            status: "Neuzugang",
+            tel: "012343395732",
+        },
+        {
+            name: "Volvo",
+            type: "Senior",
+            gender: "weblich",
+            age: 30,
+            status: "Neuzugang",
+            tel: "012343395732",
+        },
+        {
+            name: "Saab",
+            type: "SNF",
+            gender: "männlich",
+            age: 30,
+            status: "Neuzugang",
+            tel: "012343395732",
+        },
+        {
+            name: "Saab",
+            type: "SNF",
+            gender: "männlich",
+            age: 30,
+            status: "Neuzugang",
+            tel: "012343395732",
+        },
+        {
+            name: "Saab",
+            type: "SNF",
+            gender: "männlich",
+            age: 30,
+            status: "Neuzugang",
+            tel: "012343395732",
+        },
+        {
+            name: "Saab",
+            type: "SNF",
+            gender: "männlich",
+            age: 30,
+            status: "Neuzugang",
+            tel: "012343395732",
+        },
+        {
+            name: "Saab",
+            type: "SNF",
+            gender: "männlich",
+            age: 30,
+            status: "Neuzugang",
+            tel: "012343395732",
+        },
+        {
+            name: "Saab",
+            type: "SNF",
+            gender: "männlich",
+            age: 30,
+            status: "Neuzugang",
+            tel: "012343395732",
+        },
+        {
+            name: "Saab",
+            type: "SNF",
+            gender: "männlich",
+            age: 30,
+            status: "Neuzugang",
+            tel: "012343395732",
+        },
+        {
+            name: "Saab",
+            type: "SNF",
+            gender: "männlich",
+            age: 30,
+            status: "Neuzugang",
+            tel: "012343395732",
+        },
+        {
+            name: "Saab",
+            type: "SNF",
+            gender: "männlich",
+            age: 30,
+            status: "Neuzugang",
+            tel: "012343395732",
+        },
+        {
+            name: "Saab",
+            type: "SNF",
+            gender: "männlich",
+            age: 30,
+            status: "Neuzugang",
+            tel: "012343395732",
+        },
+        {
+            name: "Saab",
+            type: "SNF",
+            gender: "männlich",
+            age: 30,
+            status: "Neuzugang",
+            tel: "012343395732",
+        },
+    ];
+    $: filteredItems = items.filter(
+        (item) =>
+            item.name.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1,
+    );
 
     let person = {
         title: "Frau",
@@ -36,42 +172,82 @@
         operator: "Martina Müller",
         notes: "Lorem ipsum dolor sit amet, error virtute vix eu, falli timeam vulputate at per. Diceret accusam scriptorem sea ne, mel ad nihil causae. Facer quidam feugait nam in, ut mel congue definiebas, tota animal fabellas",
     };
-
 </script>
 
-<!-- Breadcrumb, showing the routes -->
-<Breadcrumb aria-label="Default breadcrumb example">
-    <BreadcrumbItem href="/" home>Dashboard</BreadcrumbItem>
-    <BreadcrumbItem href="/persondatabase">Personendatenbank</BreadcrumbItem>
-    <BreadcrumbItem href="/persondatabase/detail">Ansehen</BreadcrumbItem>
-    <BreadcrumbItem>Match</BreadcrumbItem>
-</Breadcrumb>
-<!-- Site Title -->
-<h1
-    class="mt-4 mb-0 text-4xl font-black text-black leading-[62px] max-md:mt-6 max-md:max-w-full max-md:text-3xl max-md:leading-[35px]"
->
-    Match tätigen
-</h1>
-<div class="grid gap-4 mb-6 md:flex md:justify-end z-50">
-    <Button
-        size="xs"
-        href="/persondatabase/detail"
-        class="bg-[#47277D] text-md font-semibold hover:bg-[#321C59] hover:shadow-[0_0_10px_#6C5297]"
-        ><CloseCircleOutline class="w-6 h-6 me-2" />
-        Match abbrechen</Button
+{#if !isView}
+    <TableSearch
+        tableBodyClass="bg-black z-10"
+        classInput="mb-6 bg-secondary-50 border-2 border-[#846EA8] focus:border-[#47277D] focus:ring-transparent hover:shadow-[0_0_10px_#6C5297] focus:shadow-[0_0_10px_#6C5297]"
+        placeholder="Suche Person nach Name"
+        customColor=""
+        hoverable={true}
+        bind:inputValue={searchTerm}
     >
-</div>
-
-<div class="grid grid-cols-2 gap-12">
-    <!-- Die Daten für zu matchende Person -->
+        <TableHead>
+            <TableHeadCell class="bg-primary-50">Name</TableHeadCell>
+            <TableHeadCell class="bg-primary-50">Typ</TableHeadCell>
+            <TableHeadCell class="bg-primary-50">Geschlecht</TableHeadCell>
+            <TableHeadCell class="bg-primary-50">Alter</TableHeadCell>
+            <TableHeadCell class="bg-primary-50">Status</TableHeadCell>
+            <TableHeadCell class="bg-primary-50">Telefonnr.</TableHeadCell>
+            <TableHeadCell class="bg-primary-50 sticky right-0 shadow-md"
+                >Aktion</TableHeadCell
+            >
+        </TableHead>
+        <TableBody tableBodyClass="divide-y">
+            {#each filteredItems as item}
+                <TableBodyRow>
+                    <TableBodyCell class="bg-[#FEFCF9]"
+                        >{item.name}</TableBodyCell
+                    >
+                    <TableBodyCell class="bg-[#FEFCF9]"
+                        >{item.type}</TableBodyCell
+                    >
+                    <TableBodyCell class="bg-[#FEFCF9]"
+                        >{item.gender}</TableBodyCell
+                    >
+                    <TableBodyCell class="bg-[#FEFCF9]"
+                        >{item.age}</TableBodyCell
+                    >
+                    <TableBodyCell class="bg-[#FEFCF9]"
+                        >{item.status}</TableBodyCell
+                    >
+                    <TableBodyCell class="bg-[#FEFCF9]"
+                        >{item.tel}</TableBodyCell
+                    >
+                    <TableBodyCell class="bg-[#FEFCF9] sticky right-0">
+                        <a
+                            on:click={toggleViewed}
+                            href=""
+                            class="font-medium text-primary-600 hover:underline dark:text-primary-500"
+                            >Ansehen</a
+                        >
+                    </TableBodyCell>
+                </TableBodyRow>
+            {/each}
+        </TableBody>
+    </TableSearch>
+{:else}
     <div>
+        <div class="grid gap-4 mb-4 md:flex md:justify-start sticky top-32 z-50">
+            <Button
+                size="xs"
+                href=""
+                class="bg-[#47277D] text-md font-semibold hover:bg-[#321C59] hover:shadow-[0_0_10px_#6C5297]"
+                ><UsersOutline class="w-6 h-6 me-2" />
+                Match erstellen</Button
+            >
+            <Button
+                on:click={toggleViewed}
+                size="xs"
+                href=""
+                class="bg-[#F8F8F9] text-md text-[#47277D] font-semibold hover:bg-[#F8F8F9] hover:shadow-[0_0_10px_#6C5297] border-2 border-[#846EA8] h-10"
+                ><ChevronLeftOutline class="w-6 h-6 me-1" />
+                Zurück</Button
+            >
+        </div>
         <div class="grid">
             <div class="container mb-8">
-                <h1
-                    class="mt-4 mb-20 text-3xl font-black text-black leading-[62px] max-md:mt-6 max-md:max-w-full max-md:text-3xl max-md:leading-[35px]"
-                >
-                    Die zu matchende Person
-                </h1>
                 <div class="text-xl font-bold mb-1">Persönliche Daten</div>
                 <p class="text-sm text-neutral-700 w-72">
                     Hier sind die grundlegende Informationen von dieser Person
@@ -208,14 +384,4 @@
             </div>
         </div>
     </div>
-
-    <!-- Suche für Match -->
-    <div class=" bg-primary-50 px-10 rounded-xl relative">
-        <h1
-            class="mt-4 mb-4 text-3xl font-black text-black leading-[62px] max-md:mt-6 max-md:max-w-full max-md:text-3xl max-md:leading-[35px]"
-        >
-            Match suchen
-        </h1>
-        <Table />
-    </div>
-</div>
+{/if}

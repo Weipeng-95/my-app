@@ -129,7 +129,7 @@
 </script>
 
 <TableSearch
-    tableBodyClass="bg-black"
+    tableBodyClass="bg-black z-10"
     classInput="mb-6 bg-secondary-50 border-2 border-[#846EA8] focus:border-[#47277D] focus:ring-transparent hover:shadow-[0_0_10px_#6C5297] focus:shadow-[0_0_10px_#6C5297]"
     placeholder="Suche Person nach Name"
     customColor=""
