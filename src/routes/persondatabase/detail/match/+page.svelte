@@ -37,6 +37,10 @@
         notes: "Lorem ipsum dolor sit amet, error virtute vix eu, falli timeam vulputate at per. Diceret accusam scriptorem sea ne, mel ad nihil causae. Facer quidam feugait nam in, ut mel congue definiebas, tota animal fabellas",
     };
 
+    import { isViewed } from "../../../../stores/store.js";
+
+    let toggledValue;
+    $: toggledValue = $isViewed;
 </script>
 
 <!-- Breadcrumb, showing the routes -->
@@ -214,7 +218,7 @@
         <h1
             class="mt-4 mb-4 text-3xl font-black text-black leading-[62px] max-md:mt-6 max-md:max-w-full max-md:text-3xl max-md:leading-[35px]"
         >
-            Match suchen
+        {toggledValue? "Persondaten in Detail": "Match suchen"}
         </h1>
         <Table />
     </div>

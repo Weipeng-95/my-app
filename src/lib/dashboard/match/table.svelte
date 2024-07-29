@@ -9,17 +9,19 @@
         Badge,
         Button,
     } from "flowbite-svelte";
-    import {
-        UsersOutline,
-        ChevronLeftOutline
-    } from "flowbite-svelte-icons";
+    import { UsersOutline, ChevronLeftOutline } from "flowbite-svelte-icons";
 
     import InfoRow from "$lib/dashboard/inforow.svelte";
 
+    import { isViewed } from "../../../stores/store.js";
+
+    let toggledValue = false;
+
+    $: toggledValue = $isViewed;
+
     const toggleViewed = () => {
-        isView = !isView;
+        isViewed.update((n) => !n);
     };
-    let isView = false;
     let searchTerm = "";
     let items = [
         {
@@ -174,7 +176,7 @@
     };
 </script>
 
-{#if !isView}
+{#if !toggledValue}
     <TableSearch
         tableBodyClass="bg-black z-10"
         classInput="mb-6 bg-secondary-50 border-2 border-[#846EA8] focus:border-[#47277D] focus:ring-transparent hover:shadow-[0_0_10px_#6C5297] focus:shadow-[0_0_10px_#6C5297]"
@@ -229,7 +231,9 @@
     </TableSearch>
 {:else}
     <div>
-        <div class="grid gap-4 mb-4 md:flex md:justify-start sticky top-32 z-50">
+        <div
+            class="grid gap-4 mb-4 md:flex md:justify-start sticky top-32 z-50"
+        >
             <Button
                 size="xs"
                 href=""
